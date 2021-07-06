@@ -1,0 +1,350 @@
+/* Color themes */
+
+:root {
+    --spotify: #f06ade;
+    --spotify-feedback: #72f367;
+    --spotify-visited: .5;
+    /* opacity */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Styling classes */
+
+.clickable {
+    cursor: pointer;
+}
+
+.padding-1 {
+    padding: .25rem;
+}
+
+.sticky {
+    position: sticky;
+    bottom: 0;
+    left: 0
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+
+/* Theme */
+
+h1,
+h2,
+h3,
+.setting {
+    text-shadow: 1px 1px gray;
+}
+
+body {
+    color: #d2a347;
+}
+
+.modal {
+    color: black;
+}
+
+#your-name {
+    color: gold;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#artist {
+    color: gold;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+/*    Robert CSS
+
+/*  This changes the background color of modal */
+
+.modal-content {
+    background-image: linear-gradient(0deg, rgb(235, 154, 208) 41%, rgba(83, 25, 218, 0.9668242296918768) 100%)
+}
+
+.modal-content h3 {
+    color: rgb(238, 186, 14);
+}
+
+label {
+    color: whitesmoke;
+}
+
+
+/*  End of Roberts CSS
+
+
+/* Reuseable Components */
+
+.x {
+    text-decoration: none;
+}
+
+.x:hover {
+    color: var(--spotify);
+}
+
+h2 {
+    font-size: 2rem !important;
+}
+
+h3 {
+    font-size: 1.78rem !important;
+}
+
+
+/* Components */
+
+.modal-footer {
+    cursor: pointer;
+    /* This is how Stephanie and Robert tried changing footer but instead background of nav */
+    background-image: linear-gradient(to bottom, #EA9AD0, #D6C183);
+}
+
+.modal-footer .btn-flat:hover {
+    color: var(--spotify);
+}
+
+.settings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}
+
+.settings .setting {
+    /* width: 100px; */
+    /* flex-basis: 80px; */
+    cursor: pointer;
+    margin-right: 3ch;
+}
+
+@media (max-width: 568px) {
+    h1 {
+        margin-top: 4ch;
+        font-size: 2.5rem;
+    }
+    .setting {
+        margin-top: 1ch;
+    }
+}
+
+.setting:hover {
+    color: var(--spotify);
+}
+
+.collection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: none;
+    gap: 10px;
+}
+
+.collection-item {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#modal-artist .collection {
+    gap: 0;
+}
+
+.new-item {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#front-username {
+    text-align: left;
+}
+
+.collection>*:empty {
+    display: none !important;
+}
+
+#front-horoscope {
+    border: 1px solid gray;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#front-horoscope img {
+    text-align: center;
+    width: auto;
+    height: 200px;
+    margin: 10px auto;
+}
+
+#front-playlist:empty {
+    display: none !important;
+}
+
+#front-playlist>div:first-child {
+    margin-bottom: 10px;
+}
+
+#front-playlist>div:first-child::after {
+    content: "\f1bc\0a00 Here are some songs just for you and your day:";
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 1.25rem;
+    font-weight: 400;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+#front-playlist {
+    border: 1px solid gray;
+    flex-basis: 100%;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+#front-playlist>div {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+#front-playlist>div>.playlist-column {
+    flex-basis: 50%;
+}
+
+.result-title-text {
+    background-color: rgb(119, 29, 29) !important;
+}
+
+.results-title h2::after {
+    content: " Related Artists";
+    font-weight: 400;
+}
+
+.results-title h2 {
+    color: rgb(96, 2, 124);
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: .75rem 0;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.results-list li {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (min-width: 480px) {
+    .results-list li {
+        width: calc(100% * (6/12));
+    }
+}
+
+@media (min-width: 768px) {
+    .results-list li {
+        width: calc(100% * (4/12));
+    }
+}
+
+@media (min-width: 1200px) {
+    .results-list li {
+        width: calc(100% * (3/12));
+    }
+}
+
+.results-list li.active {
+    background-color: lightgreen;
+}
+
+.results-list li.active .card-content {
+    background-color: rgb(157, 248, 72);
+    color: black;
+}
+
+#results-title-text {
+    font-size: 1.5rem !important;
+    background-color: rgb(142, 147, 167);
+}
+
+.results-list img {
+    width: 100%;
+    height: auto;
+}
+
+.results-spotify.card-action {
+    padding: 10px 0 0 0;
+    text-align: center;
+}
+
+.results-spotify .fa,
+.results-spotify a {
+    color: var(--spotify) !important;
+    text-transform: none !important;
+    transition: color 500ms;
+}
+
+.results-spotify a:hover {
+    color: var(--spotify-feedback-variant) !important;
+}
+
+.results-spotify a:visited {
+    opacity: var(--spotify-visited) !important;
+}
+
+.playlist-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.playlist-column .clickable {
+    line-height: 2rem;
+}
+
+.playlist-column .clickable:hover {
+    color: var(--spotify);
+}
+
+.card-content {
+    background-color: #5319DA;
+    color: gold;
+}
+
+.results-container {
+    /* background: rgb(152,141,109);
+    background: linear-gradient(180deg, rgba(152,141,109,1) 27%, rgba(89,25,218,0.9668242296918768) 100%); */
+}
+
+.modal-content {
+    background-color: gray;
+}
